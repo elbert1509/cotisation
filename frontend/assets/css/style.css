@@ -1,0 +1,154 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #B0D9F2;
+    text-align: center;
+}
+
+
+.header-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0 ;
+}
+
+
+.header-title h1 {
+
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(43, 18, 88);
+    font-family: Rubik;
+
+}
+
+.emoji{
+    font-size: 30px;
+}
+
+.navbar{
+    background-color:#83c7f1;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .logo{
+    display: flex;
+    align-items: center;
+    margin-right: 30px ;
+    color: #52ace4;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo-icon {
+    font-size: 20px;
+    
+}
+
+.image_logo {
+    width: 50px; /* Ajuste la taille de l'image */
+    height: 50px; /* Doit être égal à la largeur pour un cercle parfait */
+    border-radius: 50%; /* Rend l'image circulaire */
+    object-fit: cover; /* Assure que l'image s'adapte bien dans le cercle */
+    border: 2px solid white; /* Ajoute une bordure blanche pour l'effet */
+}
+
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #2C3E50;
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #D5E8F6;
+}
+
+/* Style pour les images des membres */
+.membre-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    display: block;
+    margin: auto;
+}
+
+/* Style pour la ligne Total */
+tfoot tr {
+    background-color: #FFD700;
+    font-weight: bold;
+}
+
+#downloadBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#downloadBtn:hover {
+    background-color: #218838;
+}

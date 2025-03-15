@@ -1,0 +1,89 @@
+// Données des membres avec leur photo et cotisations
+const membres = [
+    { nom: "Waza", photo: "images/photo1.png", cotisations: [5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Melissa", photo: "images/melissa.jpg", cotisations: [5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Victoire", photo: "images/stephanie.jpg", cotisations: [5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Isis", photo: "images/isis.jpg", cotisations:[5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Norbert", photo: "images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Bolingo", photo: "images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Evan's", photo: "images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Tic-Tac ", photo: "images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    { nom: "Naz-K", photo: "images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
+];
+
+// Liste des mois
+const mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+
+function genererTableau() {
+    const membreRow = document.getElementById("membreRow");
+    const nomRow = document.getElementById("nomRow");
+    const tbody = document.querySelector("#cotisationTable tbody");
+    const totalRow = document.getElementById("totalRow");
+
+    // Vider les lignes existantes
+    membreRow.innerHTML = "<th></th>";  // Première case vide pour alignement
+    nomRow.innerHTML = "<th>Mois</th>"; // Ajout du titre pour les mois
+    tbody.innerHTML = "";
+    totalRow.innerHTML = "<td><strong>Total</strong></td>"; // Ajoute la colonne "Total"
+    let totaux = membres.map(membre => membre.cotisations.reduce((acc, val) => acc + val, 0));
+
+
+    // Ajouter les membres dans l'entête avec leur photo
+    membres.forEach(membre => {
+        let thMembre = document.createElement("th");
+        let img = document.createElement("img");
+        img.src = membre.photo;
+        img.alt = membre.nom;
+        img.classList.add("membre-img");
+
+        thMembre.appendChild(img);
+        membreRow.appendChild(thMembre);
+
+        let thNom = document.createElement("th");
+        thNom.textContent = membre.nom;
+        nomRow.appendChild(thNom);
+    });
+
+    // Ajouter les cotisations pour chaque mois
+    mois.forEach((moisNom, index) => {
+        let tr = document.createElement("tr");
+
+        // Ajouter le mois en première colonne
+        let tdMois = document.createElement("td");
+        tdMois.textContent = moisNom;
+        tdMois.style.fontWeight = "bold";
+        tr.appendChild(tdMois);
+
+        // Ajouter les cotisations pour chaque membre
+        membres.forEach(membre => {
+            let td = document.createElement("td");
+            td.textContent = membre.cotisations[index] + " cfa"; 
+            tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+    });
+
+    totaux.forEach(total => {
+        let tdTotal = document.createElement("td");
+        tdTotal.textContent = total + " ";
+        totalRow.appendChild(tdTotal);
+    });
+}
+
+// 🔽 Fonction pour convertir le tableau en CSV et le télécharger
+function telechargerImage() {
+    let table = document.getElementById("cotisationTable");
+
+    // Utilisation de html2canvas pour capturer le tableau en image
+    html2canvas(table).then(canvas => {
+        let link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png"); // Convertit en image PNG
+        link.download = "cotisations.png"; // Nom du fichier à télécharger
+        link.click(); // Déclenche le téléchargement
+    });
+}
+
+// Générer le tableau au chargement de la page
+document.addEventListener("DOMContentLoaded", genererTableau);
+document.getElementById("downloadBtn").addEventListener("click", telechargerImage);

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Distressed&display=swap" rel="stylesheet">    
+    <title>Cotisation Famille unie</title>
+</head>
+<body>
+    
+    <header class = "hero">
+        <div class = "header-title">
+            <span class ="emoji ">    </span>
+            <h1> Cotisation Famille unie </h1>
+            <span> </span>
+        </div>
+
+        <nav class = "navbar">
+            <div class="logo"> <span class="logo-icon"> <img class="image_logo" src="images/famille.png" alt=""></span> <span class="logo-text"> </span> </div>
+            <ul>
+                <li><a href="#"> Home </a></li>
+                <li><a href="#"> About </a></li>
+                <li><a href="#"> Contact </a></li>
+
+            </ul>
+        </nav>
+
+        <section>
+            <div class="container">
+                <h2>Suivi des Cotisations Mensuelles 2025</h2>
+                <button id="downloadBtn">Télécharger le Tableau</button>
+                <table id="cotisationTable">
+                    <thead>
+                        <tr id="membreRow">
+                            <th></th> <!-- Colonne vide pour l'entête des mois -->
+                        </tr>
+                        <tr id="nomRow">
+                            <th>Mois</th> <!-- Colonne pour les mois -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les lignes des mois et cotisations seront générées dynamiquement -->
+                    </tbody>
+                    <tfoot>
+                        <tr id="totalRow">
+                            <td><strong>Total</strong></td> <!-- Colonne pour le total -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+            <script src="js/script.js"></script>
+        </section>
+
+    </header>
+</body>
+</html>
