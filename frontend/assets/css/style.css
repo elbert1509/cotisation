@@ -152,3 +152,33 @@ tfoot tr {
 #downloadBtn:hover {
     background-color: #218838;
 }
+
+/* 🔽 Conteneur du Solde Total */
+.total-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* 🔽 Style de la carte contenant le solde */
+.total-card {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* 🔽 Effet au survol */
+.total-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}

@@ -19,6 +19,7 @@ function genererTableau() {
     const nomRow = document.getElementById("nomRow");
     const tbody = document.querySelector("#cotisationTable tbody");
     const totalRow = document.getElementById("totalRow");
+    const totalAll = document.getElementById("TotalAll");
 
     // Vider les lignes existantes
     membreRow.innerHTML = "<th></th>";  // Première case vide pour alignement
@@ -69,6 +70,11 @@ function genererTableau() {
         tdTotal.textContent = total + " ";
         totalRow.appendChild(tdTotal);
     });
+
+
+    let soldeTotal = totaux.reduce((acc,val) => acc + val ,0)
+    document.getElementById("TotalAll").textContent = `Solde : ${soldeTotal} `;
+
 }
 
 // 🔽 Fonction pour convertir le tableau en CSV et le télécharger
@@ -83,6 +89,9 @@ function telechargerImage() {
         link.click(); // Déclenche le téléchargement
     });
 }
+
+
+
 
 // Générer le tableau au chargement de la page
 document.addEventListener("DOMContentLoaded", genererTableau);
