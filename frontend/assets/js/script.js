@@ -130,34 +130,8 @@ function telechargerImage() {
     });
 }
 
-document.getElementById("file-upload").addEventListener("change", function() {
-    const label = document.querySelector(".file-label");
-    if (this.files.length > 0) {
-        label.textContent = this.files[0].name;
-    } else {
-        label.textContent = "Sélectionner un fichier";
-    }
-});
-
-document.getElementById("upload-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const file = document.getElementById("file-upload").files[0];
-    const montant = document.getElementById("montant").value;
-    
-    if (!file) {
-        alert("Veuillez sélectionner un fichier.");
-        return;
-    }
-    
-    if (montant <= 0) {
-        alert("Veuillez entrer un montant valide.");
-        return;
-    }
-
-    alert("Paiement soumis avec succès !");
-});
+document.addEventListener("DOMContentLoaded", genererTableau);
+document.getElementById("downloadBtn").addEventListener("click", telechargerImage);
 
 
 // Générer le tableau au chargement de la page
-document.addEventListener("DOMContentLoaded", genererTableau);
-document.getElementById("downloadBtn").addEventListener("click", telechargerImage);
