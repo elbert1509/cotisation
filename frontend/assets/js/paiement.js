@@ -4,6 +4,8 @@
 
  import { getFirestore } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
  import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js";
+ import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+
 
 
  //import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
@@ -40,6 +42,20 @@ document.getElementById("file-upload").addEventListener("change", function() {
     }
 });
 
+const membres = [ "Waza", "Melissa", "Victoire","Isis","Norbert","Bolingo","Evan's","Tic-Tac","Naz-K","Baggio"]
+const selecElement = document.getElementById("cotisant-select");
+const cotisant = document.getElementById("cotisant-select").value; // Récupère le cotisant sélectionné
+
+
+membres.forEach(element => {
+    let option = document.createElement("option");
+    option.value=element;
+    option.textContent=element;
+    selecElement.appendChild(option)
+   
+});
+console.log("voici le co " + cotisant)
+
 document.getElementById("upload-form").addEventListener("submit", function(event) {
     event.preventDefault();
     const file = document.getElementById("file-upload").files[0];
@@ -64,9 +80,10 @@ document.getElementById("upload-form").addEventListener("submit", function(event
         console.log("Fichier disponible à :", downloadURL);
         
         // Ajouter les infos dans Firestore
-        db.collection("paiements").add({
+        addDoc(collection(db, "coti"), {
             montant: montant,
-            fichierURL: downloadURL,
+            photo: downloadURL,
+            nom :cotisant,
             date: new Date()
         }).then(() => {
             alert("Paiement enregistré avec succès !");
@@ -81,12 +98,3 @@ document.getElementById("upload-form").addEventListener("submit", function(event
     alert("Paiement soumis avec succès !");
 });
 
-    const membres = [ "Waza", "Melissa", "Victoire","Isis","Norbert","Bolingo","Evan's","Tic-Tac","Naz-K","Baggio"]
-    const selecElement = document.getElementById("cotisant-select");
-
-    membres.forEach(element => {
-        let option = document.createElement("option");
-        option.value=element;
-        option.textContent=element;
-        selecElement.appendChild(option)
-    });
