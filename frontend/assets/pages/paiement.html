@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Distressed&display=swap" rel="stylesheet">   
+    <title>Cotisation Famille unie</title>
+</head>
+<body>
+    
+    <header class = "hero">
+        <div class = "header-title">
+            <span class ="emoji ">    </span>
+            <h1> Cotisation Famille unie </h1>
+            <span> </span>
+        </div>
+
+        <nav class = "navbar">
+            <div class="logo"> <span class="logo-icon"> <img class="image_logo" src="/frontend/assets/images/famille.png" alt=""></span> <span class="logo-text"> </span> </div>
+            <ul>
+                <li><a href="/index.html"> 2025 </a></li>
+                <li><a href="/index.html"> 2024 </a></li>
+                <li><a href="#"> 2023 </a></li>
+                <li><a href="#" id="ajouter"> Paiement </a></li>
+
+            </ul>
+        </nav>
+
+        <section class="upload-section">
+            <h2>Justification de cotisation</h2>
+            <form id="upload-form">
+                <label for="cotisant-select" class="nom-cotisant">Nom du Cotisant</label>
+                <select name="cotisant" id="cotisant-select">
+                    <option value="">Sélectionner un nom</option>
+                </select>
+
+                <label for="file-upload" class="file-label">Sélectionner un fichier</label>
+                <input type="file" id="file-upload" class="file-input" accept=".pdf, .jpg, .png, .jpeg">
+                
+                <label for="montant">Montant </label>
+                <input type="number" id="montant" name="montant" placeholder="Entrez le montant" required>
+                
+                <button type="submit" class="upload-btn">Soumettre</button>
+            </form>
+
+            <script type="module" src="/frontend/assets/js/paiement.js"></script>
+            <!-- Firebase App (nécessaire pour utiliser Firebase) -->
+      
+
+        </section>
+        
+
+
+    </header>
+</body>
+</html>

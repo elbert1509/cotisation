@@ -130,9 +130,8 @@ function telechargerImage() {
     });
 }
 
-
+document.addEventListener("DOMContentLoaded", genererTableau);
+document.getElementById("downloadBtn").addEventListener("click", telechargerImage);
 
 
 // Générer le tableau au chargement de la page
-document.addEventListener("DOMContentLoaded", genererTableau);
-document.getElementById("downloadBtn").addEventListener("click", telechargerImage);
