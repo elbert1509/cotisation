@@ -81,22 +81,22 @@ document.getElementById("upload-form").addEventListener("submit", function(event
     }).then((downloadURL) => {
         console.log("Fichier disponible à :", downloadURL);
         
-        // Ajouter les infos dans Firestore
-        addDoc(collection(db, "coti"), {
+        emailjs.send("service_4yu3pet", "template_jmbpnkh", {
+            cotisant_name: cotisant,
             montant: montant,
-            photo: downloadURL,
-            nom :cotisant,
-            date: new Date()
-        }).then(() => {
-            alert("Paiement enregistré avec succès !");
-            document.getElementById("upload-form").reset();
-        }).catch((error) => {
-            console.error("Erreur lors de l'enregistrement :", error);
+           document_url: downloadURL
+        }).then((response) => {
+            console.log("Email envoyé avec succès !", response.status, response.text);
+        }).catch((err) => {
+            console.error("Erreur lors de l'envoi de l'email :", err);
         });
     }).catch((error) => {
         console.error("Erreur d'upload :", error);
     });
 
-    alert(" Merci " + cotisant  + "Paiement soumis avec succès !");
+   
+
+
+    alert(" Merci " + cotisant  + " Paiement soumis avec succès !");
 });
 
