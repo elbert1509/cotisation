@@ -44,8 +44,6 @@ document.getElementById("file-upload").addEventListener("change", function() {
 
 const membres = [ "Waza", "Melissa", "Victoire","Isis","Norbert","Bolingo","Evan's","Tic-Tac","Naz-K","Baggio"]
 const selecElement = document.getElementById("cotisant-select");
-const cotisant = document.getElementById("cotisant-select").value; // Récupère le cotisant sélectionné
-
 
 membres.forEach(element => {
     let option = document.createElement("option");
@@ -54,12 +52,13 @@ membres.forEach(element => {
     selecElement.appendChild(option)
    
 });
-console.log("voici le co " + cotisant)
+
 
 document.getElementById("upload-form").addEventListener("submit", function(event) {
     event.preventDefault();
     const file = document.getElementById("file-upload").files[0];
     const montant = document.getElementById("montant").value;
+    const cotisant = document.getElementById("cotisant-select").value; // Récupère le cotisant sélectionné
     
     if (!file) {
         alert("Veuillez sélectionner un fichier.");
@@ -70,6 +69,9 @@ document.getElementById("upload-form").addEventListener("submit", function(event
         alert("Veuillez entrer un montant valide.");
         return;
     }
+
+    console.log("voici le co " + cotisant)
+
 
     const storageRef = ref(storage, "paiements/" + file.name);
     const uploadTask = uploadBytes(storageRef, file);
@@ -95,6 +97,6 @@ document.getElementById("upload-form").addEventListener("submit", function(event
         console.error("Erreur d'upload :", error);
     });
 
-    alert("Paiement soumis avec succès !");
+    alert(" Merci " + cotisant  + "Paiement soumis avec succès !");
 });
 
