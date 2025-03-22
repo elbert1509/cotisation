@@ -49,7 +49,7 @@ let membres;
     }
 
 
-
+    var soldeTo; 
 
 // Liste des mois
 const mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
@@ -61,6 +61,7 @@ function genererTableau() {
     const totalRow = document.getElementById("totalRow");
     const totalAll = document.getElementById("TotalAll");
 
+
     // Vider les lignes existantes
     membreRow.innerHTML = "<th></th>";  // Première case vide pour alignement
     nomRow.innerHTML = "<th>Mois</th>"; // Ajout du titre pour les mois
@@ -68,6 +69,7 @@ function genererTableau() {
     totalRow.innerHTML = "<td><strong>Total</strong></td>"; // Ajoute la colonne "Total"
     let totaux = membres.map(membre => membre.cotisations.reduce((acc, val) => acc + val, 0));
 
+    
 
     // Ajouter les membres dans l'entête avec leur photo
     membres.forEach(membre => {
@@ -114,7 +116,9 @@ function genererTableau() {
 
     let soldeTotal = totaux.reduce((acc,val) => acc + val ,0)
     document.getElementById("TotalAll").textContent = `Solde : ${soldeTotal} `;
-
+    soldeTo = soldeTotal + 213400 ; 
+    console.log(soldeTo)
+    document.getElementById("montantDispo").textContent = `Montant Disponible : ${soldeTo} cfa `
 }
 
 // 🔽 Fonction pour convertir le tableau en CSV et le télécharger
