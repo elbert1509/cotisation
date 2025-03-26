@@ -116,7 +116,7 @@ function genererTableau() {
 
     let soldeTotal = totaux.reduce((acc,val) => acc + val ,0)
     document.getElementById("TotalAll").textContent = `Solde : ${soldeTotal} `;
-    soldeTo = soldeTotal + 213400 ; 
+    soldeTo = soldeTotal + 233400 ; 
     console.log(soldeTo)
     document.getElementById("montantDispo").textContent = `Montant Disponible : ${soldeTo} cfa `
 }
