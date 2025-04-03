@@ -27,7 +27,7 @@ let membres;
             { nom: "Victoire", photo: "/frontend/assets/images/stephanie.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
             { nom: "Isis", photo: "/frontend/assets/images/isis.jpg", cotisations:[5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]  },
             { nom: "Norbert", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
             { nom: "Evan's", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]  },
             { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations:[5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
             { nom: "Naz-K", photo: "/frontend/assets/images/nazk.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0] },
