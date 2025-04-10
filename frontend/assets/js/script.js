@@ -118,7 +118,17 @@ function genererTableau() {
     document.getElementById("TotalAll").textContent = `Solde : ${soldeTotal} `;
     soldeTo = soldeTotal + 298400 ; 
     console.log(soldeTo)
-    document.getElementById("montantDispo").textContent = `Montant Disponible : ${soldeTo} cfa `
+    const montantStocke = localStorage.getItem("montantDisponible");
+    console.log(montantStocke)
+    const dispoElement = document.getElementById("montantDispo");
+    if (dispoElement) {
+        if (montantStocke !== null) {
+            const montant = parseFloat(montantStocke);
+            dispoElement.textContent = `Montant Disponible : ${montant.toLocaleString()} cfa`;
+        } else {
+            dispoElement.textContent = "Montant Disponible : (non disponible)";
+        }
+    }
 }
 
 // 🔽 Fonction pour convertir le tableau en CSV et le télécharger

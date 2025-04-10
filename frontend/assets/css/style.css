@@ -205,6 +205,17 @@ tfoot tr {
     text-align: center;
 }
 
+.Historique-section {
+    background-color: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
 .upload-section h2 {
     color: #2C3E50;
     margin-bottom: 15px;
