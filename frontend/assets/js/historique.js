@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = [
         { description: "Solde Avant ", montant: 398400 },
         { description: "Layette Petit ROGANDJI", montant: -51500 },
+{ description: "Régulation Norbert", montant: 40000 },
         
     ];
 
