@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { description: "Solde Avant ", montant: 398400 },
         { description: "Layette Petit ROGANDJI", montant: -51500 },
 { description: "Régulation Norbert", montant: 40000 },
+        { description: "Solde Stéphanie", montant: 45000 },
         
     ];
 
