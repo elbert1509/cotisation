@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { description: "Layette Petit ROGANDJI", montant: -51500 },
 { description: "Régulation Norbert", montant: 40000 },
         { description: "Solde Stéphanie", montant: 45000 },
+        { description: "Avril Waza", montant: 5000 },
         
     ];
 
