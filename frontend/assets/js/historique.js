@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 { description: "Régulation Norbert", montant: 40000 },
         { description: "Solde Stéphanie", montant: 45000 },
         { description: "Avril Waza", montant: 5000 },
+        { description: "Nprbert*", montant: 5000 },
+        { description: "Avril Bolingo", montant: 5000 },
         
     ];
 
