@@ -16,7 +16,7 @@ let membres;
             { nom: "Norbert", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
             { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
             { nom: "Evan's", photo: "/frontend/assets/images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 0] },
             { nom: "Naz-K", photo: "/frontend/assets/images/nazk.jpg", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
         ];
     }else if (page == "2024.html"){
