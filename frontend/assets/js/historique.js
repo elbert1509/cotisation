@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { description: "Avril Waza", montant: 5000 },
         { description: "Norbert*", montant: 5000 },
         { description: "Avril Bolingo", montant: 5000 },
+{ description: "Mise à jour waza", montant: 30000 },
         
     ];
 
