@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { description: "Norbert*", montant: 5000 },
         { description: "Avril Bolingo", montant: 5000 },
 { description: "Mise à jour waza", montant: 30000 },
-      { description: "Mise à jour Levy", montant: 30000 },  
+      { description: "Mise à jour Levy", montant: 30000 }, 
+{ description: "Mise à jour waza", montant: 10000 },  
     ];
 
     let total = 0;
