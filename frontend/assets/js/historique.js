@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 { description: "Mise à jour waza", montant: 30000 },
       { description: "Mise à jour Levy", montant: 30000 }, 
 { description: "Mise à jour waza", montant: 10000 },  
+{ description: "Mise à jour Isis 30/10/25", montant: 30000 },  
     ];
 
     let total = 0;
