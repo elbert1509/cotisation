@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = [
         { description: "Solde Avant ", montant: 398400 },
         { description: "Layette Petit ROGANDJI", montant: -51500 },
-{ description: "Régulation Norbert", montant: 40000 },
+        { description: "Régulation Norbert", montant: 40000 },
         { description: "Solde Stéphanie", montant: 45000 },
         { description: "Avril Waza", montant: 5000 },
         { description: "Norbert*", montant: 5000 },
         { description: "Avril Bolingo", montant: 5000 },
-{ description: "Mise à jour waza", montant: 30000 },
-      { description: "Mise à jour Levy", montant: 30000 }, 
-{ description: "Mise à jour waza", montant: 10000 },  
-{ description: "Mise à jour Isis 30/10/25", montant: 30000 },  
+        { description: "Cotisation waza", montant: 30000 },
+        { description: "Cotisation Levy", montant: 30000 }, 
+        { description: "Cotisation waza", montant: 10000 },  
+        { description: "Cotisation Isis 30/10/25", montant: 30000 },  
     ];
 
     let total = 0;
