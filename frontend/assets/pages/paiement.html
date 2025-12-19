@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/frontend/assets/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Distressed&display=swap" rel="stylesheet">   
@@ -19,13 +19,14 @@
         </div>
 
         <nav class = "navbar">
-            <div class="logo"> <span class="logo-icon"> <img class="image_logo" src="/frontend/assets/images/famille.png" alt=""></span> <span class="logo-text"> </span> </div>
-            <ul>
-                <li><a href="/index.html"> 2025 </a></li>
-                <li><a href="/index.html"> 2024 </a></li>
+            <div class="logo"> <span class="logo-icon"> <img class="image_logo" src="../images/famille.png" alt=""></span> <span class="logo-text"> </span> </div>
+            <button id="menu-toggle" aria-label="Ouvrir le menu"> &#9776; </button>
+            <ul class="nav-links">
+                <li><a href="../../index.html"> 2025 </a></li>
+                <li><a href="2024.html"> 2024 </a></li>
                 <li><a href="#"> 2023 </a></li>
-                <li><a href="#" id="ajouter"> Paiement </a></li>
-
+                <li><a href="historique.html"> Historique </a></li>
+                <li><a href="#"> Paiement </a></li>
             </ul>
         </nav>
 
@@ -46,7 +47,8 @@
                 <button type="submit" class="upload-btn">Soumettre</button>
             </form>
 
-            <script type="module" src="/frontend/assets/js/paiement.js"></script>
+            <script src="../js/main.js"></script>
+            <script type="module" src="../js/paiement.js"></script>
             <!-- Firebase App (nécessaire pour utiliser Firebase) -->
             <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">

@@ -144,8 +144,13 @@ function telechargerImage() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", genererTableau);
-document.getElementById("downloadBtn").addEventListener("click", telechargerImage);
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof genererTableau === "function") {
+        genererTableau();
+    }
 
-
-// Générer le tableau au chargement de la page
+    const downloadBtn = document.getElementById("downloadBtn");
+    if (downloadBtn) {
+        downloadBtn.addEventListener("click", telechargerImage);
+    }
+});
