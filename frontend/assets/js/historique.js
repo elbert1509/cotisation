@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { description: "Cotisation Levy", montant: 30000 }, 
         { description: "Cotisation waza", montant: 10000 },  
         { description: "Cotisation Isis 30/10/25", montant: 30000 },  
-        { description: "Solde Mélissa 27/12/25", montant: 40000 },  
+        { description: "Solde Mélissa 27/12/25 (A vérifier)", montant: 40000 },  
+        { description: "Solde Isis 30/12/25 (A vérifier)", montant: 40000 },  
     ];
 
     let total = 0;
