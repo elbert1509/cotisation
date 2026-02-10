@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { description: "Solde Mélissa 27/12/25 (A vérifier)", montant: 40000 },  
         { description: "Solde Isis 30/12/25 (A vérifier)", montant: 20000 },
         { description: "Solde Levy 30/12/25 (A vérifier)", montant: 10000 }, 
-        { description: "Solde Evans 31/12/25 (A vérifier)", montant: 60000 },     
+        { description: "Solde Evans 31/12/25 (A vérifier)", montant: 60000 }, 
+        { description: "cotisation ISis 10/02/26 (A vérifier)", montant: 25000 },   
     ];
 
     let total = 0;
