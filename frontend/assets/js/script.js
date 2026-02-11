@@ -46,15 +46,16 @@ let membres;
             { nom: "Naz-K", photo: "/frontend/assets/images/nazk.jpg", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
         ];
     }else {
-        membres = [
-            { nom: "Waza", photo: "/frontend/assets/images/waza.jpg", cotisations: [5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Melissa", photo: "/frontend/assets/images/melissa.jpg", cotisations: [5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Victoire", photo: "/frontend/assets/images/stephanie.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Isis", photo: "/frontend/assets/images/isis.jpg", cotisations:[5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Norbert", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
+
+         membres = [
+            { nom: "Waza", photo: "/frontend/assets/images/waza.jpg",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Melissa", photo: "/frontend/assets/images/melissa.jpg",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Victoire", photo: "/frontend/assets/images/stephanie.jpg",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Isis", photo: "/frontend/assets/images/isis.jpg",  cotisations: [5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Norbert", photo: "/frontend/assets/images/photo1.png",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
             { nom: "Evan's", photo: "/frontend/assets/images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0] },
+            { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
             { nom: "Naz-K", photo: "/frontend/assets/images/nazk.jpg", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
         ]
 
