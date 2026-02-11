@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="frontend/assets/css/style.css">
+    <link rel="stylesheet" href="/frontend/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Distressed&display=swap" rel="stylesheet">    
     <title>Cotisation Famille unie</title>
 </head>
@@ -20,14 +19,14 @@
         </div>
 
         <nav class = "navbar">
-            <div class="logo"> <span class="logo-icon"> <img class="image_logo" src="frontend/assets/images/famille.png" alt=""></span> <span class="logo-text"> </span> </div>
+            <div class="logo"> <span class="logo-icon"> <img class="image_logo" src="/frontend/assets/images/famille.png" alt=""></span> <span class="logo-text"> </span> </div>
             <ul>
-                <li><a href="#"> 2026 </a></li>
-                <li><a href="frontend/assets/pages/2025.html"> 2025 </a></li>
-                <li><a href="frontend/assets/pages/2024.html"> 2024 </a></li>
+                <li><a href="/index.html"> 2026 </a></li>
+                <li><a href="2025.html"> 2025 </a></li>
+                <li><a href="2024.html"> 2024 </a></li>
                 <li><a href="#"> 2023 </a></li>
-                <li><a href="frontend/assets/pages/historique.html"> Historique </a></li>
-                <li><a href="frontend/assets/pages/paiement.html" id="ajouter"> Paiement </a></li>
+                <li><a href="/frontend/assets/pages/historique.html"> Historique </a></li>
+                <li><a href="/frontend/assets/pages/paiement.html" id="ajouter"> Paiement </a></li>
 
             </ul>
         </nav>
@@ -36,7 +35,6 @@
             <div class="container">
                 <h2>Suivi des Cotisations Mensuelles 2025</h2>
                 <h3> N° Airtel Money : 074761722</h3>
-                <h3 id = "montantDispo">  Montant Disponible : </h3>
                 <button id="downloadBtn">Télécharger le Tableau</button>
                 <table id="cotisationTable">
                     <thead>
@@ -66,22 +64,9 @@
             
             <!-- 🔽 Ajoute FontAwesome pour les icônes -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-            <script src="frontend/assets/js/script.js"></script>
+            <script src="/frontend/assets/js/script.js"></script>
         </section>
 
     </header>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          console.log('Service Worker enregistré avec succès:', registration.scope);
-        })
-        .catch((error) => {
-          console.log('Échec de l\'enregistrement du Service Worker:', error);
-        });
-    });
-  }
-</script>
 </body>
 </html>
