@@ -14,13 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
         { description: "Cotisation Levy", montant: 30000 }, 
         { description: "Cotisation waza", montant: 10000 },  
         { description: "Cotisation Isis 30/10/25", montant: 30000 },  
-        { description: "Solde Mélissa 27/12/25 (A vérifier)", montant: 40000 },  
-        { description: "Solde Isis 30/12/25 (A vérifier)", montant: 20000 },
-        { description: "Solde Levy 30/12/25 (A vérifier)", montant: 10000 }, 
-        { description: "Solde Evans 31/12/25 (A vérifier)", montant: 60000 }, 
-        { description: "cotisation ISis 10/02/26 (A vérifier)", montant: 25000 },  
-        { description: "cotisation Melissa 16/02/26 (A vérifier)", montant: 5000 },    
-        { description: "cotisation Ernest 19/02/26 (A vérifier)", montant: 10000 },    
+        { description: "Solde Mélissa 27/12/25 ", montant: 40000 },  
+        { description: "Solde Isis 30/12/25 ", montant: 20000 },
+        { description: "Solde Levy 30/12/25 ", montant: 10000 }, 
+        { description: "Solde Evans 31/12/25 ", montant: 60000 }, 
+        { description: "cotisation ISis 10/02/26 ", montant: 25000 },  
+        { description: "cotisation Melissa 16/02/26 ", montant: 5000 },    
+        { description: "cotisation Ernest 19/02/26 ", montant: 10000 },   
+        { description: "Consulation compte ", montant: 100 },  
+        { description: "Layette bebe Isis ", montant: -51500 },  
+        { description: "cotisation Ernest 21/03/26 ", montant: 5000 },  
     ];
 
     let total = 0;
