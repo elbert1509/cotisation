@@ -3,41 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/frontend/assets/css/style.css">
+    <link rel="stylesheet" href="/frontend/assets/css/style.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Distressed&display=swap" rel="stylesheet">   
-    <title>Cotisation Famille unie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <title>Historique – Cotisation Famille unie</title>
 </head>
 <body>
-    
-    <header class = "hero">
-        <div class = "header-title">
-            <span class ="emoji ">    </span>
-            <h1> Cotisation Famille unie </h1>
-            <span> </span>
+
+    <header class="hero">
+        <div class="header-title">
+            <span class="emoji">    </span>
+            <h1>Cotisation Famille unie</h1>
+            <span></span>
         </div>
 
-        <nav class = "navbar">
-            <div class="logo"> <span class="logo-icon"> <img class="image_logo" src="/frontend/assets/images/famille.png" alt=""></span> <span class="logo-text"> </span> </div>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon"><img class="image_logo" src="/frontend/assets/images/famille.png" alt=""></span>
+            </div>
             <ul>
-                <li><a href="/index.html"> 2026 </a></li>
-                <li><a href="/frontend/assets/pages/2025.html"> 2025 </a></li>
-                <li><a href="/frontend/assets/pages/2024.html"> 2024 </a></li>
-                <li><a href="#"> 2023 </a></li>
-                <li><a href="/frontend/assets/pages/historique.html"> Historique </a></li>
-                <li><a href="#" id="ajouter"> Paiement </a></li>
-
+                <li><a href="/index.html">2026</a></li>
+                <li><a href="/frontend/assets/pages/2025.html">2025</a></li>
+                <li><a href="/frontend/assets/pages/2024.html">2024</a></li>
+                <li><a href="#">2023</a></li>
+                <li><a href="/frontend/assets/pages/historique.html">Historique</a></li>
+                <li><a href="/frontend/assets/pages/paiement.html" id="ajouter">Paiement</a></li>
             </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
-    <section class="Historique-section">
+    <div class="container">
+        <h2>Historique des transactions</h2>
+    </div>
 
+    <div class="historique-body"></div>
 
-    </section>
-        
+    <nav class="bottom-nav">
+        <a href="/index.html">
+            <span class="bottom-nav-icon">📅</span>
+            <span>2026</span>
+        </a>
+        <a href="/frontend/assets/pages/2025.html">
+            <span class="bottom-nav-icon">📋</span>
+            <span>2025</span>
+        </a>
+        <a href="/frontend/assets/pages/2024.html">
+            <span class="bottom-nav-icon">🗂️</span>
+            <span>2024</span>
+        </a>
+        <a href="/frontend/assets/pages/historique.html" class="active">
+            <span class="bottom-nav-icon">📊</span>
+            <span>Historique</span>
+        </a>
+        <a href="/frontend/assets/pages/paiement.html">
+            <span class="bottom-nav-icon">💳</span>
+            <span>Paiement</span>
+        </a>
+    </nav>
 
     <script src="/frontend/assets/js/historique.js"></script>
+    <script>
+        const hamburger = document.getElementById("hamburgerBtn");
+        const navMenu = document.querySelector(".navbar ul");
+        if (hamburger && navMenu) {
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("open");
+            });
+            document.addEventListener("click", (e) => {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburger.classList.remove("active");
+                    navMenu.classList.remove("open");
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,92 +1,109 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const historiqueSection = document.querySelector(".Historique-section");
 
-
-    const data = [
-        { description: "Solde Avant ", montant: 398400 },
-        { description: "Layette Petit ROGANDJI", montant: -51500 },
-        { description: "Régulation Norbert", montant: 40000 },
-        { description: "Solde Stéphanie", montant: 45000 },
-        { description: "Avril Waza", montant: 5000 },
-        { description: "Norbert*", montant: 5000 },
-        { description: "Avril Bolingo", montant: 5000 },
-        { description: "Cotisation waza", montant: 30000 },
-        { description: "Cotisation Levy", montant: 30000 }, 
-        { description: "Cotisation waza", montant: 10000 },  
-        { description: "Cotisation Isis 30/10/25", montant: 30000 },  
-        { description: "Solde Mélissa 27/12/25 ", montant: 40000 },  
-        { description: "Solde Isis 30/12/25 ", montant: 20000 },
-        { description: "Solde Levy 30/12/25 ", montant: 10000 }, 
-        { description: "Solde Evans 31/12/25 ", montant: 60000 }, 
-        { description: "cotisation ISis 10/02/26 ", montant: 25000 },  
-        { description: "cotisation Melissa 16/02/26 ", montant: 5000 },    
-        { description: "cotisation Ernest 19/02/26 ", montant: 10000 },   
-        { description: "Consulation compte ", montant: 100 },  
-        { description: "Layette bebe Isis ", montant: -51500 },  
-        { description: "cotisation Ernest 21/03/26 ", montant: 5000 },  
+    var transactions = [
+        { label: "Solde reporte",                montant: 398400 },
+        { label: "Layette Petit ROGANDJI",        montant: -51500 },
+        { label: "Regulation Norbert",            montant: 40000  },
+        { label: "Solde Stephanie",               montant: 45000  },
+        { label: "Avril - Waza",                  montant: 5000   },
+        { label: "Avril - Norbert",               montant: 5000   },
+        { label: "Avril - Bolingo",               montant: 5000   },
+        { label: "Cotisation Waza",               montant: 30000  },
+        { label: "Cotisation Levy",               montant: 30000  },
+        { label: "Cotisation Waza",               montant: 10000  },
+        { label: "Cotisation Isis - 30/10/25",    montant: 30000  },
+        { label: "Solde Melissa - 27/12/25",      montant: 40000  },
+        { label: "Solde Isis - 30/12/25",         montant: 20000  },
+        { label: "Solde Levy - 30/12/25",         montant: 10000  },
+        { label: "Solde Evans - 31/12/25",        montant: 60000  },
+        { label: "Cotisation Isis - 10/02/26",    montant: 25000  },
+        { label: "Cotisation Melissa - 16/02/26", montant: 5000   },
+        { label: "Cotisation Ernest - 19/02/26",  montant: 10000  },
+        { label: "Consultation compte",           montant: -100   },
+        { label: "Layette bebe Isis",             montant: -51500 },
+        { label: "Cotisation Ernest - 21/03/26",  montant: 5000   }
     ];
 
-    let total = 0;
+    var totalCredits = 0;
+    var totalDebits  = 0;
+    transactions.forEach(function(t) {
+        if (t.montant > 0) totalCredits += t.montant;
+        else totalDebits += t.montant;
+    });
+    var solde = totalCredits + totalDebits;
 
-    const table = document.createElement("table");
-    table.style.width = "100%";
-    table.style.borderCollapse = "collapse";
+    localStorage.setItem("montantDisponible", solde);
 
-    const thead = document.createElement("thead");
-    const headerRow = document.createElement("tr");
+    var section = document.querySelector(".historique-body");
+    if (!section) return;
 
-    ["Description", "Montant "].forEach(text => {
-        const th = document.createElement("th");
-        th.textContent = text;
-        th.style.border = "1px solid black";
-        th.style.padding = "8px";
-        headerRow.appendChild(th);
+    // ---- Stats ----
+    var statsDiv = document.createElement("div");
+    statsDiv.className = "histo-stats";
+
+    function creerStatCard(cls, label, valeur) {
+        var card = document.createElement("div");
+        card.className = "histo-stat-card " + cls;
+
+        var lbl = document.createElement("span");
+        lbl.className = "stat-label";
+        lbl.textContent = label;
+
+        var val = document.createElement("span");
+        val.className = "stat-value";
+        val.textContent = valeur;
+
+        card.appendChild(lbl);
+        card.appendChild(val);
+        return card;
+    }
+
+    statsDiv.appendChild(creerStatCard("solde",  "Solde actuel",   solde.toLocaleString()         + " CFA"));
+    statsDiv.appendChild(creerStatCard("credit", "Total credits",  "+" + totalCredits.toLocaleString() + " CFA"));
+    statsDiv.appendChild(creerStatCard("debit",  "Total debits",   totalDebits.toLocaleString()    + " CFA"));
+
+    section.appendChild(statsDiv);
+
+    // ---- Liste ----
+    var list = document.createElement("div");
+    list.className = "histo-list";
+
+    var running = 0;
+    transactions.forEach(function(t, i) {
+        running += t.montant;
+        var isCredit = t.montant >= 0;
+
+        var item = document.createElement("div");
+        item.className = "histo-item";
+        item.style.animationDelay = (i * 0.04) + "s";
+
+        var icon = document.createElement("div");
+        icon.className = "histo-icon " + (isCredit ? "credit" : "debit");
+        icon.textContent = isCredit ? "+" : "-";
+
+        var info = document.createElement("div");
+        info.className = "histo-info";
+
+        var lbl = document.createElement("span");
+        lbl.className = "histo-label";
+        lbl.textContent = t.label;
+
+        var runSpan = document.createElement("span");
+        runSpan.className = "histo-running";
+        runSpan.textContent = "Solde : " + running.toLocaleString() + " CFA";
+
+        info.appendChild(lbl);
+        info.appendChild(runSpan);
+
+        var amount = document.createElement("span");
+        amount.className = "histo-amount " + (isCredit ? "credit" : "debit");
+        amount.textContent = (isCredit ? "+" : "") + t.montant.toLocaleString() + " CFA";
+
+        item.appendChild(icon);
+        item.appendChild(info);
+        item.appendChild(amount);
+        list.appendChild(item);
     });
 
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    const tbody = document.createElement("tbody");
-
-    data.forEach(item => {
-        const row = document.createElement("tr");
-
-        const tdDesc = document.createElement("td");
-        tdDesc.textContent = item.description;
-        tdDesc.style.border = "1px solid black";
-        tdDesc.style.padding = "8px";
-
-        const tdMontant = document.createElement("td");
-        tdMontant.textContent = item.montant.toFixed(2);
-        tdMontant.style.border = "1px solid black";
-        tdMontant.style.padding = "8px";
-
-        total += item.montant;
-        localStorage.setItem("montantDisponible",total)
-
-        row.appendChild(tdDesc);
-        row.appendChild(tdMontant);
-        tbody.appendChild(row);
-    });
-
-    // Ajout de la ligne Total
-    const totalRow = document.createElement("tr");
-    const tdTotalLabel = document.createElement("td");
-    tdTotalLabel.textContent = "Total";
-    tdTotalLabel.style.fontWeight = "bold";
-    tdTotalLabel.style.border = "1px solid black";
-    tdTotalLabel.style.padding = "8px";
-
-    const tdTotalValue = document.createElement("td");
-    tdTotalValue.textContent = total.toFixed(2);
-    tdTotalValue.style.fontWeight = "bold";
-    tdTotalValue.style.border = "1px solid black";
-    tdTotalValue.style.padding = "8px";
-
-    totalRow.appendChild(tdTotalLabel);
-    totalRow.appendChild(tdTotalValue);
-    tbody.appendChild(totalRow);
-
-    table.appendChild(tbody);
-    historiqueSection.appendChild(table);
+    section.appendChild(list);
 });
