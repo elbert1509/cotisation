@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { label: "Layette bebe Isis",             montant: -51500 },
         { label: "Cotisation Ernest - 21/03/26",  montant: 5000   },
         { label: "Cotisation Mélissa - 28/04/26", montant: 15000  },
-        { label: "Cotisation Stephanie - 06/05/26", montant: 15000  },
+        { label: "Cotisation Stephanie - 06/05/26", montant: 10000  },
     ];
 
     var totalCredits = 0;
