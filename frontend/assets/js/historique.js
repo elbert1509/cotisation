@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { label: "Cotisation Ernest - 21/03/26",  montant: 5000   },
         { label: "Cotisation Mélissa - 28/04/26", montant: 15000  },
         { label: "Cotisation Stephanie - 06/05/26", montant: 10000  },
+        { label: "Solde Année 2025 Norbert - 19/05/26", montant: 40000},
     ];
 
     var totalCredits = 0;
