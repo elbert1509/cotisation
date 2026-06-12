@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="frontend/assets/css/style.css?v=2">
+    <link rel="stylesheet" href="frontend/assets/css/style.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json">
@@ -117,5 +117,23 @@
     });
   }
 </script>
+    <!-- Bouton flottant pour ouvrir l'assistant -->
+    <button id="chat-launcher" class="chat-launcher" aria-label="Ouvrir l'assistant">💬</button>
+
+    <!-- Panneau de discussion (masqué par défaut) -->
+    <div id="ai-chat-widget" class="chat-widget" aria-hidden="true">
+        <div class="chat-header">
+            <span>Poupoune</span>
+            <button id="chat-close" class="chat-close" aria-label="Fermer">&#x2715;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="Posez une question…" autocomplete="off">
+            <button id="chat-send" aria-label="Envoyer">&#x27A4;</button>
+        </div>
+    </div>
+
+    <script src="frontend/assets/js/config.js"></script>
+    <script src="frontend/assets/js/agent.js?v=5"></script>
 </body>
 </html>

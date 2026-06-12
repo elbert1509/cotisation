@@ -1,0 +1,7 @@
+# Secrets / variables d'environnement
+.env
+frontend/assets/js/config.js
+
+# Système
+Thumbs.db
+.DS_Store
