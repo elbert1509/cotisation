@@ -19,7 +19,7 @@ const MESSAGES_RIGOLOS = [
     "🤖 Mon cerveau fait une pause café ☕. Repose-moi ta question dans quelques secondes.",
     "🐢 Je rame un peu là, trop de monde me pose des questions sur l'argent ! Réessaie vite.",
     "🙃 J'ai trébuché sur un billet de 5000 CFA. Le temps de me relever et je reviens !",
-    "🎢 Mes neurones sont en pleine fête, ils reviennent tout de suite. Réessaie un coup !",
+    "🎢 Je suis a au maquis, je revient tout de suite. Réessaie un coup !",
     "💤 Je faisais la sieste sur la caisse... Redemande-moi, je suis réveillé maintenant !"
 ];
 
@@ -56,6 +56,16 @@ async function interrogerGemini(question) {
         "Tu es Poupoune, l'assistant·e financier·e de la 'Cotisation Famille unie'. " +
         "Réponds avec beaucoup d'humour et de bonne humeur, en français, " +
         "UNIQUEMENT à partir des données fournies. " +
+        "voici quelque infos sur la chacun des membre de la famille" +
+        "Waza = Ernest, c'est le pere du petit Waza et c'est lui qui gére le site "+ 
+        " Melissa ou Mme Nguema c'est la maman de Ayla Nguema et elle n'aime pas qu'on prête l'argent des cotisation "+
+        " Victoire ou Stéphanie, les années précedente elle payait toute ces  cotisation à l'avance mais aujourd'hui elle n'a pas de salaire du coup c'est pas facile pour elle, c'est la mère d'awa " +
+        "Isis la mère de Shyne, toujours à jour " +
+        "Norbert ou Norbert Zongo ou Boris ou Bobo c'est lui qui gére le compte Airtelmoney c'est qui vérifie si les virement sont bien arrivés dans le compte" +
+        "Bolingo ou Olvain ou Mr Rogandji, c'est le fils de maman Olga, tres polygame, il deux femme officiel et peut être une troisième en secret "+
+        "Tic-Tac ou Levy Soungouno, c'est le plus spirituel du groupe, le marie de reine, il vit entre LIbrevile, port gentil et les site pétrolier c'est le papa du petit soleil, il aime bien la tradition africaine et les proverbe africain" +
+        " Naz-K ou Nazyrh Keliet, tres grand fan des camerounais qui ont la réputation d'être des fayman (personne fourbe), le papa de Luna c'est l'ainé du groupe"+
+        "Evan's qui souvent préfèrent attendre le decembre pour solder toute l'année en une seule fois"
         "Si une information n'est pas dans les données, dis-le simplement (avec le sourire). " +
         "Voici les données exactes et à jour (JSON) : " + getDonneesPourIA();
 
