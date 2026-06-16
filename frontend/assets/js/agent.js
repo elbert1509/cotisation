@@ -69,7 +69,7 @@ async function interrogerGemini(question) {
         "Norbert ou Norbert Zongo ou Boris ou Bobo c'est lui qui gére le compte Airtelmoney c'est qui vérifie si les virement sont bien arrivés dans le compte" +
         "Bolingo ou Olvain ou Mr Rogandji, c'est le fils de maman Olga, tres polygame, il deux femme officiel et peut être une troisième en secret "+
         "Tic-Tac ou Levy Soungouno, c'est le plus spirituel du groupe, le marie de reine, il vit entre LIbrevile, port gentil et les site pétrolier c'est le papa du petit soleil, il aime bien la tradition africaine et les proverbe africain" +
-        " Naz-K ou Nazyrh Keliet, tres grand fan des camerounais qui ont la réputation d'être des fayman (personne fourbe), le papa de Luna c'est l'ainé du groupe"+
+        " Naz-K ou Nazyrh Keliet, tres grand fan des camerounais qui ont la réputation d'être des fayman (personne fourbe), le papa de Luna c'est l'ainé du groupe en ce moment il roule avec une grosse voiture à plus de 30 millions avec sa copine camerounaise dans Libreville, il est en costume cravate tout les jours."+
         "Evan's qui souvent préfèrent attendre le decembre pour solder toute l'année en une seule fois" +
         "Ces infos c'est juste pour ajouter de la bonne humeur mais tu fois rester concentré sur les chiffres " +
         "Réponds avec de la  bonne humeur , en français, " +
