@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="frontend/assets/css/style.css">
+    <link rel="stylesheet" href="frontend/assets/css/style.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json">
@@ -28,8 +28,10 @@
                 <li><a href="#"> 2023 </a></li>
                 <li><a href="frontend/assets/pages/historique.html"> Historique </a></li>
                 <li><a href="frontend/assets/pages/paiement.html" id="ajouter"> Paiement </a></li>
-
             </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
 
         <section>
@@ -58,6 +60,8 @@
                 </table>
             </div>
 
+            <div id="cardsContainer" class="cards-container"></div>
+
             <section class="total-container">
                 <div class="total-card">
                     <h1 id="TotalAll">Solde : 0 €</h1>
@@ -66,11 +70,41 @@
             
             <!-- 🔽 Ajoute FontAwesome pour les icônes -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-            <script src="frontend/assets/js/script.js"></script>
+            <script src="frontend/assets/js/script.js?v=2"></script>
         </section>
 
     </header>
-    <script>
+    <nav class="bottom-nav">
+    <a href="#" class="active">
+        <span class="bottom-nav-icon">📅</span>
+        <span>2026</span>
+    </a>
+    <a href="frontend/assets/pages/2025.html">
+        <span class="bottom-nav-icon">📅</span>
+        <span>2025</span>
+    </a>
+    <a href="frontend/assets/pages/2024.html">
+        <span class="bottom-nav-icon">📅</span>
+        <span>2024</span>
+    </a>
+    <a href="frontend/assets/pages/historique.html">
+        <span class="bottom-nav-icon">📊</span>
+        <span>Historique</span>
+    </a>
+    <a href="frontend/assets/pages/paiement.html">
+        <span class="bottom-nav-icon">💳</span>
+        <span>Paiement</span>
+    </a>
+</nav>
+<div id="membreModal" class="modal-overlay">
+    <div class="modal-card">
+        <div class="modal-drag-handle"></div>
+        <button class="modal-close" id="modalClose">&#x2715;</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js')
@@ -83,5 +117,23 @@
     });
   }
 </script>
+    <!-- Bouton flottant pour ouvrir l'assistant -->
+    <button id="chat-launcher" class="chat-launcher" aria-label="Ouvrir l'assistant">💬</button>
+
+    <!-- Panneau de discussion (masqué par défaut) -->
+    <div id="ai-chat-widget" class="chat-widget" aria-hidden="true">
+        <div class="chat-header">
+            <span>Poupoune</span>
+            <button id="chat-close" class="chat-close" aria-label="Fermer">&#x2715;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="Posez une question…" autocomplete="off">
+            <button id="chat-send" aria-label="Envoyer">&#x27A4;</button>
+        </div>
+    </div>
+
+    <script src="frontend/assets/js/config.js"></script>
+    <script src="frontend/assets/js/agent.js?v=5"></script>
 </body>
 </html>
