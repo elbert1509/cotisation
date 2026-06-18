@@ -1073,3 +1073,190 @@ select:hover, select:focus {
         transform-origin: bottom center;
     }
 }
+
+/* ===================================================================== */
+/* ========================  PAGE STATISTIQUES  ======================== */
+/* ===================================================================== */
+
+.stats-page {
+    width: 92%;
+    max-width: 900px;
+    margin: 20px auto 90px;
+}
+
+.stats-section {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.stats-section h2 {
+    color: #2C3E50;
+    font-size: 18px;
+    margin: 0 0 4px;
+}
+
+.stats-subtitle {
+    font-size: 12px;
+    color: #888;
+    margin: 0 0 16px;
+}
+
+.chart-container {
+    position: relative;
+    height: 280px;
+}
+
+/* ---- Toggle buttons for Graph 2 ---- */
+.member-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 14px;
+}
+
+.member-toggle-btn {
+    padding: 5px 13px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    line-height: 1.4;
+}
+
+/* ---- Debt list ---- */
+.debt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.debt-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    border-left: 4px solid #eee;
+    animation: itemFadeIn 0.35s ease forwards;
+    opacity: 0;
+}
+
+.debt-item.has-debt {
+    border-left-color: #e15759;
+}
+
+.debt-item.no-debt {
+    border-left-color: #59a14f;
+}
+
+.debt-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.debt-emoji {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.debt-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.debt-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2C3E50;
+    display: block;
+}
+
+.debt-paid {
+    font-size: 11px;
+    color: #888;
+    display: block;
+}
+
+.debt-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.debt-rank {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+    background: #e9ecef;
+    border-radius: 8px;
+    padding: 1px 7px;
+}
+
+.debt-amount {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.debt-amount.ok {
+    color: #155724;
+}
+
+.debt-amount.owed {
+    color: #7f1d1d;
+    font-size: 15px;
+}
+
+/* ---- Responsive stats ---- */
+@media (max-width: 768px) {
+    .stats-page {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .stats-section {
+        padding: 15px 12px;
+    }
+
+    .stats-section h2 {
+        font-size: 16px;
+    }
+
+    .chart-container {
+        height: 220px;
+    }
+
+    .debt-name {
+        font-size: 14px;
+    }
+
+    .debt-amount {
+        font-size: 13px;
+    }
+
+    .debt-amount.owed {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .bottom-nav-icon {
+        font-size: 17px;
+    }
+
+    .bottom-nav a {
+        font-size: 9px;
+    }
+}

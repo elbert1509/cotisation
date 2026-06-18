@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/frontend/assets/css/style.css?v=2">
+    <link rel="stylesheet" href="/frontend/assets/css/style.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Distressed&display=swap" rel="stylesheet">
-    <title>Historique – Cotisation Famille unie</title>
+    <title>Statistiques – Cotisation Famille unie</title>
 </head>
 <body>
 
@@ -38,10 +38,35 @@
     </header>
 
     <div class="container">
-        <h2>Historique des transactions</h2>
+        <h2>📊 Statistiques des cotisations</h2>
     </div>
 
-    <div class="historique-body"></div>
+    <div class="stats-page">
+
+        <section class="stats-section">
+            <h2>📈 Évolution du montant collecté</h2>
+            <p class="stats-subtitle">Montant cumulé réel vs si tout le monde cotisait à temps (Jan 2024 → Juin 2026)</p>
+            <div class="chart-container">
+                <canvas id="chart-global"></canvas>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2>👥 Évolution par cotisant</h2>
+            <p class="stats-subtitle">Montant cumulé de chaque cotisant depuis 2024. Cliquez pour masquer/afficher.</p>
+            <div id="member-toggles" class="member-toggles"></div>
+            <div class="chart-container">
+                <canvas id="chart-members"></canvas>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2>💰 Tableau des dettes</h2>
+            <p class="stats-subtitle">De la plus grosse à la plus petite dette (toutes années confondues)</p>
+            <div id="debt-list" class="debt-list"></div>
+        </section>
+
+    </div>
 
     <nav class="bottom-nav">
         <a href="/index.html">
@@ -56,11 +81,11 @@
             <span class="bottom-nav-icon">🗂️</span>
             <span>2024</span>
         </a>
-        <a href="/frontend/assets/pages/historique.html" class="active">
+        <a href="/frontend/assets/pages/historique.html">
             <span class="bottom-nav-icon">📊</span>
             <span>Historique</span>
         </a>
-        <a href="/frontend/assets/pages/stats.html">
+        <a href="/frontend/assets/pages/stats.html" class="active">
             <span class="bottom-nav-icon">📈</span>
             <span>Stats</span>
         </a>
@@ -70,22 +95,7 @@
         </a>
     </nav>
 
-    <script src="/frontend/assets/js/historique.js"></script>
-    <script>
-        const hamburger = document.getElementById("hamburgerBtn");
-        const navMenu = document.querySelector(".navbar ul");
-        if (hamburger && navMenu) {
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("active");
-                navMenu.classList.toggle("open");
-            });
-            document.addEventListener("click", (e) => {
-                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                    hamburger.classList.remove("active");
-                    navMenu.classList.remove("open");
-                }
-            });
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="/frontend/assets/js/stats.js"></script>
 </body>
 </html>
