@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { label: "Solde Année 2025 Norbert - 19/05/26", montant: 40000},
         { label: "Cotisation Melissa - 12/06/26", montant: 5000},
         { label: "Cotisation Ernest - 13/06/26", montant: 15000},
+        { label: "Régulation du Naz-K - 30/06/26", montant: 123600},
     ];
 
     var totalCredits = 0;
