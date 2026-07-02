@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { label: "Cotisation Melissa - 12/06/26", montant: 5000},
         { label: "Cotisation Ernest - 13/06/26", montant: 15000},
         { label: "Régulation du Naz-K - 30/06/26", montant: 123600},
+        { label: "Cotisation Mélissa - 02/07/26", montant: 10000},
     ];
 
     var totalCredits = 0;
