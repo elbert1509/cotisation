@@ -34,7 +34,7 @@ function pause(ms) {
 
 // Construit le contexte (les données réelles) envoyé à l'IA.
 function getDonneesPourIA() {
-    // allYearsData est défini dans script.js (chargé avant agent.js).
+    // allYearsData est défini dans data.js (chargé avant agent.js).
     const donnees = (typeof allYearsData !== "undefined") ? allYearsData : {};
 
     const maintenant = new Date();

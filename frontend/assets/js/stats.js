@@ -1,22 +1,20 @@
-const allYearsData = {
-    "Waza":     { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,5000,5000,5000,5000,0,0,0,0,0,0] },
-    "Melissa":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,5000,5000,5000,0,0,0,0,0,0,0] },
-    "Victoire": { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,0,0,0,0,0,0,0,0,0,0] },
-    "Isis":     { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,5000,5000,5000,0,0,0,0,0,0,0] },
-    "Norbert":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [0,0,0,0,0,0,0,0,0,0,0,0] },
-    "Bolingo":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,0,0,0,0,0,0,0,0],                      2026: [0,0,0,0,0,0,0,0,0,0,0,0] },
-    "Evan's":   { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [0,0,0,0,0,0,0,0,0,0,0,0] },
-    "Tic-Tac":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,0,0,0,0,0,0,0,0,0,0,0] },
-    "Naz-K":    { 2024: [5000,5000,5000,5000,5000,5000,0,0,0,0,0,0],                  2025: [0,0,0,0,0,0,0,0,0,0,0,0],                                   2026: [0,0,0,0,0,0,0,0,0,0,0,0] },
-    "Bagio":    { 2024: [5000,0,0,0,0,0,0,0,0,0,0,0],                                 2025: [],                                                           2026: [] }
-};
+// Les donnees (allYearsData, COTISATION_MENSUELLE, getAnnees)
+// viennent de data.js, charge AVANT ce fichier dans stats.html.
 
-const COTISATION = 5000;
-const CURRENT_YEAR = 2026;
-const CURRENT_MONTH = 5; // Juin = index 5
-const YEARS = [2024, 2025, 2026];
+const COTISATION = COTISATION_MENSUELLE;
+
+// Periode courante calculee dynamiquement : les stats s'arretent au mois
+// en cours, ou au dernier mois de la derniere annee presente dans data.js
+// si l'annee reelle a depasse les donnees.
+const _now = new Date();
+const _anneesData = getAnnees();
+const _maxAnnee = _anneesData[_anneesData.length - 1];
+const CURRENT_YEAR = Math.min(_now.getFullYear(), _maxAnnee);
+const CURRENT_MONTH = _now.getFullYear() > _maxAnnee ? 11 : _now.getMonth();
+const YEARS = _anneesData.filter(function(y) { return y <= CURRENT_YEAR; });
 
 const MONTH_SHORT = ["Jan","Fév","Mar","Avr","Mai","Jun","Jul","Aoû","Sep","Oct","Nov","Déc"];
+const MONTH_FULL = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 
 const MEMBER_COLORS = {
     "Waza":     "#4e79a7",
@@ -272,6 +270,12 @@ function buildDebtCard() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    var periode = document.getElementById("stats-periode");
+    if (periode) {
+        periode.textContent = "(Jan " + YEARS[0] + " → " +
+            MONTH_FULL[CURRENT_MONTH] + " " + CURRENT_YEAR + ")";
+    }
+
     buildGraph1();
     buildGraph2();
     buildDebtCard();

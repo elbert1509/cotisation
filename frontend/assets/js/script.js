@@ -1,81 +1,22 @@
 
 
+// Les donnees (allYearsData, PHOTOS, COTISATION_MENSUELLE, helpers)
+// viennent de data.js, charge AVANT ce fichier dans chaque page HTML.
+
 let page = window.location.pathname.split("/").pop();
-console.log(page)
-let membres; 
 
-// Données des membres avec leur photo et cotisations
+// Annee affichee par la page courante : les pages d'archives sont nommees
+// "AAAA.html", toute autre page (index.html, racine) affiche la derniere annee.
+const annees = getAnnees();
+let anneePage = annees[annees.length - 1];
+const matchAnnee = page.match(/^(\d{4})\.html$/);
+if (matchAnnee && annees.indexOf(Number(matchAnnee[1])) !== -1) {
+    anneePage = Number(matchAnnee[1]);
+}
 
-    if (page == "index.html"){
+let membres = getMembresAnnee(anneePage);
 
-         membres = [
-            { nom: "Waza", photo: "/frontend/assets/images/waza.jpg",  cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Melissa", photo: "/frontend/assets/images/melissa.jpg",  cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0] },
-            { nom: "Victoire", photo: "/frontend/assets/images/stephanie.jpg",  cotisations: [5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Isis", photo: "/frontend/assets/images/isis.jpg",  cotisations: [5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Norbert", photo: "/frontend/assets/images/photo1.png",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Evan's", photo: "/frontend/assets/images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Naz-K", photo: "/frontend/assets/images/nazk.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0] }
-        ];
-    }else if (page == "2024.html"){
-
-         membres = [
-            { nom: "Waza", photo: "/frontend/assets/images/waza.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Melissa", photo: "/frontend/assets/images/melissa.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Victoire", photo: "/frontend/assets/images/stephanie.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Isis", photo: "/frontend/assets/images/isis.jpg", cotisations:[5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]  },
-            { nom: "Norbert", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Evan's", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]  },
-            { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations:[5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Naz-K", photo: "/frontend/assets/images/nazk.jpg", cotisations: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000]},
-            { nom: "Bagio", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
-        ];
-    }else if (page == "2025.html"){
-         membres = [
-            { nom: "Waza",      photo: "/frontend/assets/images/waza.jpg",      cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Melissa",   photo: "/frontend/assets/images/melissa.jpg",   cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Victoire",  photo: "/frontend/assets/images/stephanie.jpg", cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Isis",      photo: "/frontend/assets/images/isis.jpg",      cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Norbert",   photo: "/frontend/assets/images/photo1.png",    cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Bolingo",   photo: "/frontend/assets/images/photo1.png",    cotisations: [5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Evan's",    photo: "/frontend/assets/images/photo1.png",    cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]  },
-            { nom: "Tic-Tac ",  photo: "/frontend/assets/images/photo1.png",    cotisations: [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000] },
-            { nom: "Naz-K",     photo: "/frontend/assets/images/nazk.jpg",      cotisations: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000]}
-        ];
-    }else {
-
-         membres = [
-            { nom: "Waza", photo: "/frontend/assets/images/waza.jpg",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Melissa", photo: "/frontend/assets/images/melissa.jpg",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Victoire", photo: "/frontend/assets/images/stephanie.jpg",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Isis", photo: "/frontend/assets/images/isis.jpg",  cotisations: [5000, 5000, 5000, 5000, 5000, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Norbert", photo: "/frontend/assets/images/photo1.png",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Bolingo", photo: "/frontend/assets/images/photo1.png",  cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Evan's", photo: "/frontend/assets/images/photo1.png", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Tic-Tac ", photo: "/frontend/assets/images/photo1.png", cotisations: [5000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-            { nom: "Naz-K", photo: "/frontend/assets/images/nazk.jpg", cotisations: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
-        ]
-
-    }
-
-
-    var soldeTo;
-
-const allYearsData = {
-    "Waza":     { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,5000,5000,5000,5000,0,0,0,0,0,0] },
-    "Melissa":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,5000,5000,5000,5000,5000,0,0,0,0,0] },
-    "Victoire": { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,0,0,0,0,0,0,0,0,0,0] },
-    "Isis":     { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,5000,5000,5000,0,0,0,0,0,0,0] },
-    "Norbert":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [0,0,0,0,0,0,0,0,0,0,0,0] },
-    "Bolingo":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,0,0,0,0,0,0,0,0],                         2026: [0,0,0,0,0,0,0,0,0,0,0,0] },
-    "Evan's":   { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [0,0,0,0,0,0,0,0,0,0,0,0] },
-    "Tic-Tac":  { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,0,0,0,0,0,0,0,0,0,0,0] },
-    "Naz-K":    { 2024: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2025: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000], 2026: [5000,5000,5000,5000,5000,5000,0,0,0,0,0,0] },
-    "Bagio":    { 2024: [5000,0,0,0,0,0,0,0,0,0,0,0],                                  2025: [],                                                            2026: [] }
-};
+var soldeTo;
 
 // Liste des mois
 const mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
@@ -132,7 +73,7 @@ function genererTableau() {
         // Ajouter les cotisations pour chaque membre
         membres.forEach(membre => {
             let td = document.createElement("td");
-            td.textContent = membre.cotisations[index] + " cfa"; 
+            td.textContent = (membre.cotisations[index] || 0) + " cfa";
             tr.appendChild(td);
         });
 
@@ -217,14 +158,14 @@ function ouvrirDetailMembre(membre) {
     const body = document.createElement("div");
     body.className = "modal-body";
 
-    [2024, 2025, 2026].forEach(function(year) {
+    annees.forEach(function(year) {
         var cotis = data ? (data[year] || []) : (year === currentYear ? membre.cotisations : []);
         if (!cotis || cotis.length === 0) return;
 
         var cotis12 = cotis.slice(0, 12);
         var paye = cotis12.reduce(function(a, v) { return a + v; }, 0);
         var moisAttendus = year < currentYear ? 12 : currentMonth + 1;
-        var du = Math.max(0, moisAttendus * 5000 - paye);
+        var du = Math.max(0, moisAttendus * COTISATION_MENSUELLE - paye);
         totalPaye += paye;
         totalDu += du;
 
