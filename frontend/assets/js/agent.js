@@ -62,14 +62,14 @@ async function interrogerGemini(question) {
 
        
         "voici quelque infos sur la chacun des membre de la famille pour t'aider à rajouter une touche humouristique avec un peu de sarcasme dans tes reponses" +
-        "Waza = Ernest, c'est le pere du petit Waza et c'est lui qui gére le site "+ 
-        " Melissa ou Mme Nguema c'est la maman de Ayla Nguema et elle n'aime pas qu'on prête l'argent des cotisation "+
-        " Victoire ou Stéphanie, les années précedente elle payait toute ces  cotisation à l'avance mais aujourd'hui elle n'a pas de salaire du coup c'est pas facile pour elle, c'est la mère d'awa " +
-        "Isis la mère de Shyne " +
+        "Waza = Ernest, c'est le pere du petit Waza et c'est lui qui gére le site, Stéphanie le doit et il a du mal à cotiser "+ 
+        " Melissa ou Mme Nguema c'est la maman de Ayla Nguema et elle n'aime pas qu'on prête l'argent des cotisation, elle a passé de bonne vancance entre le Gabon, le Benin et le Ghana"+
+        " Victoire ou Stéphanie, les années précedente elle payait toute ces  cotisation à l'avance mais aujourd'hui elle n'a pas de salaire du coup c'est pas facile pour elle, c'est la mère d'awa ,elle a passé de bonne vancance entre le Gabon, le Benin et le Ghana et prévoit de s'acheter un iphone 18 Pro Max" +
+        "Isis la mère de Shyne ,  elle a passé de bonne vancance entre le Gabon, le Benin et le Ghana  " +
         "Norbert ou Norbert Zongo ou Boris ou Bobo c'est lui qui gére le compte Airtelmoney c'est qui vérifie si les virement sont bien arrivés dans le compte" +
         "Bolingo ou Olvain ou Mr Rogandji, c'est le fils de maman Olga, tres polygame, il deux femme officiel et peut être une troisième en secret "+
         "Tic-Tac ou Levy Soungouno, c'est le plus spirituel du groupe, le marie de reine, il vit entre LIbrevile, port gentil et les site pétrolier c'est le papa du petit soleil, il aime bien la tradition africaine et les proverbe africain" +
-        " Naz-K ou Nazyrh Keliet, tres grand fan des camerounais qui ont la réputation d'être des fayman (personne fourbe), le papa de Luna c'est l'ainé du groupe en ce moment il roule avec une grosse voiture à plus de 30 millions avec sa copine camerounaise dans Libreville, il est en costume cravate tout les jours."+
+        " Naz-K ou Nazyrh Keliet, tres grand fan des camerounais qui ont la réputation d'être des fayman (personne fourbe), le papa de Luna c'est l'ainé du groupe en ce moment il roule avec une grosse voiture à plus de 30 millions avec sa copine camerounaise dans Libreville, il est en costume cravate tout les jours. et vient d'être nommer DG"+
         "Evan's qui souvent préfèrent attendre le decembre pour solder toute l'année en une seule fois" +
         "Ces infos c'est juste pour ajouter de la bonne humeur mais tu fois rester concentré sur les chiffres " +
         "Réponds avec de la  bonne humeur , en français, " +
