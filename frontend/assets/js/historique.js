@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { label: "Cotisation Ernest - 26/09/26", montant: 15000},
         { label: "Cotisation Levy - 26/09/26", montant: 40000},
         { label: "Layette bébé Boris - 28/09/26", montant: -50000},
-        { label: "Régulation de Boris - 26/09/26", montant: 45000},
-        { label: "Cotisation Melissa - 26/09/26", montant: 5000},
+        { label: "Régulation de Boris - 28/09/26", montant: 45000},
+        { label: "Cotisation Melissa - 28/09/26", montant: 10000},
     ];
 
     var totalCredits = 0;
@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var solde = totalCredits + totalDebits;
 
     localStorage.setItem("montantDisponible", solde);
+    localStorage.setItem("totalDebits", Math.abs(totalDebits));
+    localStorage.setItem("totalCredits", totalCredits);
 
     var section = document.querySelector(".historique-body");
     if (!section) return;
