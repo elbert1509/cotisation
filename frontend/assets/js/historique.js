@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
         { label: "Layette bébé Boris - 28/09/26", montant: -50000},
         { label: "Régulation de Boris - 28/09/26", montant: 45000},
         { label: "Cotisation Melissa - 28/09/26", montant: 10000},
+        { label: "Cotisation Melissa (à Vérifier) - 29/10/26", montant: 10000},
+        { label: "Cotisation Isis (à Vérifier) - 29/10/26", montant: 5000},
+        { label: "Cotisation Ernest (à Vérifier) - 30/10/26", montant: 15000},
     ];
 
     var totalCredits = 0;
