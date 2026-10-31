@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { label: "Cotisation Melissa (à Vérifier) - 29/10/26", montant: 10000},
         { label: "Cotisation Isis (à Vérifier) - 29/10/26", montant: 5000},
         { label: "Cotisation Ernest (à Vérifier) - 30/10/26", montant: 15000},
+        { label: "Cotisation Victoire (à Vérifier) - 30/10/26", montant: 50000},
     ];
 
     var totalCredits = 0;
